@@ -1,43 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int sumTwo (int a, int b)
+
+void square1 (int a)
 {
-  int result = a + b;
-  return result;
+  a = a*a;
 }
 
-int square (int n)
-{
-  return n*n;
-}
-
-int get_max (int x, int y)
+int square2 ( int n)
 { 
-  if (x>y)
-   return x;
-   
-  else
-   return y;
+  return (n*n);
 }
-
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
 	
-	int a, b;
-	int n;
+	int a = 2;
+	int n = 2;
 	
-	a = 3;
-	b = 10;
-	printf("sumTwo result : %i\n", sumTwo(a,b));
+	square1(a);
+	printf("a = %i\n", a);
 	
-	n = 4;
-	printf("square result : %i\n", square(n));
+	n = square2(n);
+	printf("a = %i\n", n);
 	
-	printf("get_max result : %i\n", get_max(a,b));
-       
 	
 	system("PAUSE");
 	return 0;
