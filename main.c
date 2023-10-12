@@ -1,30 +1,42 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-void square1 (int a)
-{
-  a = a*a;
+int factorial (int a)
+{ 
+  int i;
+  int res = 1;
+  
+  for (i=1; i<a+1; i++)
+	  res = res*i;
+	  return res;
 }
 
-int square2 ( int n)
-{ 
-  return (n*n);
+int combination(int n, int r)
+{
+	int div1, div2;
+	
+	div1 = factorial(n);
+	div2 = factorial(n-r) * factorial(r);
+	
+	return (div1/div2);
 }
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
 	
-	int a = 2;
-	int n = 2;
+	int n;
+	int r;
+	int div1, div2;
+	int result;
 	
-	square1(a);
-	printf("a = %i\n", a);
+	printf("n : ");
+	scanf("%d", &n);
+	printf("r : ");
+	scanf("%d", &r);
 	
-	n = square2(n);
-	printf("a = %i\n", n);
-	
+    result = combination(n, r);
+    printf("result is %i\n", result);
 	
 	system("PAUSE");
 	return 0;
